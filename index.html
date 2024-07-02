@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            animation: anim 10s infinite;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @keyframes anim {
+            0% {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6YTJAzG2KIXATWqh6Y1QkpXuRrafuKeCRA&s');
+            }
+            25% {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLwKOnxwBu9_kfWR_Vw9t9mdzx7ZWSzL2_Qw&s');
+            }
+            50% {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRcNe7Acf8EB4DqEFtv6VaIjFVY2G7dO1y_g&s');
+            }
+            75% {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFS_DvSB2VOvSyY-W-Rl-ViPc45yFpLhYCaQ&s');
+            }
+            100% {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV6YTJAzG2KIXATWqh6Y1QkpXuRrafuKeCRA&s');
+            }
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+        }
+        #sub-container {
+            width: 275px;
+            height: 100%;
+            background-color:aliceblue;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            padding-bottom: 60px;
+        }
+        .temp-value,
+        .temp-description,
+        .location ,
+        .info{
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .weather-icon {
+            margin-left: 31%;
+        }
+        #city {
+            height: 30px;
+            border-radius: 7px;
+        }
+        #search{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #forecast-chart{
+            background-color: aliceblue;
+            height: 350px;
+            width: 796px;
+            margin: 0 auto;
+        }
+        #getWeather{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div id="container">
+        <div id="sub-container">
+            <div class="weather-icon">
+                <img src="https://i.pinimg.com/564x/40/ed/59/40ed59a2420894ca7af363116ee36812.jpg" width="120px">
+            </div>
+            <div class="temp-value">
+                <p>-°<span>C</span></p>
+            </div>
+            <div class="temp-description">
+                <p>-</p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+            <div id="wind" class="info">
+
+            </div>
+           <div id="humidity" class="info">
+
+           </div>
+           <div id="datetime" style="text-align: center; margin-top: 10px; font-size: 18px;"></div>
+        </div>
+    </div><br>
+    <div id="search" style="text-align: center;">
+        <input type="text" id="city" placeholder="Search with city name"><br><br>
+        <button id="getWeather">
+            <img src="https://w7.pngwing.com/pngs/936/843/png-transparent-computer-icons-search-box-website-world-wide-web-files-search-free-android-web-search-engine-symbol-thumbnail.png" style="height: 20px; width: 20px;">
+        </button>
+    </div><br>
+    <canvas id="forecast-chart" ></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
